@@ -1,0 +1,19 @@
+﻿Rolling 3M Avg =
+
+VAR _Result = 
+CALCULATE(
+	AVERAGEX(
+    	Sales,
+        Sales[Amount]
+    ),
+    DATESINPERIOD(
+		Calendar[Date],
+    	MAX(Calendar[Date]),
+    	-3,
+    	MONTHS
+	)
+)
+     
+RETURN
+      _Result
+      

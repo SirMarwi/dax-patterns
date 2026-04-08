@@ -1,0 +1,17 @@
+﻿High Value Sales = 
+
+VAR _AvgRevenue = AVERAGE(Sales[Revenue])
+
+VAR _Result = 
+CALCULATE(
+    SUMX(
+    	Sales,
+        Sales[Revenue]
+    ),
+    Sales[Units] > 5,
+    Sales[Revenue] > _AvgRevenue,
+    KEEPFILTERS(Sales)
+)
+
+RETURN
+	_Result

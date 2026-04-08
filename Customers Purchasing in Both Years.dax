@@ -1,0 +1,17 @@
+﻿Customers Both Years = 
+VAR _CustPY = 
+	CALCULATE(
+		VALUES(Orders[CustomerID]),
+		Calendar[Year] = 2023
+		)
+	    
+VAR _CustCY = 	    
+	CALCULATE(
+		VALUES(Orders[CustomerID]),
+		Calendar[Year] = 2024
+		)
+
+RETURN 
+	COUNTROWS(
+		INTERSECT(_CustPY, _CustCY)
+		)

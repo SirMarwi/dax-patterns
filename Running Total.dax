@@ -1,0 +1,10 @@
+﻿Running Total =
+VAR _CurrDate =
+    MAX ( Orders[Date] )
+VAR _Result =
+    CALCULATE (
+    	SUM ( Orders[OrderCount] ),
+    	Orders[Date] <= _CurrDate
+    	)
+RETURN
+    _Result

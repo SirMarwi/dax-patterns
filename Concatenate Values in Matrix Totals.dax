@@ -1,0 +1,12 @@
+﻿Customer Display = 
+IF(
+    HASONEVALUE(Orders[CustomerID]),
+    Orders[CustomerID],
+    CONCATENATEX(
+        VALUES(Orders[CustomerID]),
+        Orders[CustomerID],
+        ", ",
+        Orders[CustomerID],
+        ASC
+        )
+   )

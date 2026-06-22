@@ -1,0 +1,12 @@
+﻿Weighted Avg Price = 
+VAR _SumSales = 
+    SUMX(
+        ProductSales,
+        ProductSales[Price] * ProductSales[Quantity]
+        )
+    
+ VAR _SumQuantity =
+     SUM(ProductSales[Quantity])
+RETURN
+    DIVIDE(_SumSales, _SumQuantity)
+    

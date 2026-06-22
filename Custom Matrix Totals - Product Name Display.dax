@@ -1,0 +1,9 @@
+﻿Product Display =
+VAR _Logic = 
+    IF(
+        HASONEVALUE (Sales[ProductName]),
+        Sales[ProductName],
+        "All Products"
+        )
+RETURN
+    _Logic

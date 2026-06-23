@@ -1,0 +1,10 @@
+﻿YTD Sales = 
+VAR _MaxDate = MAX(Calendar[Date])
+VAR _MaxYear = YEAR(_MaxDate)
+      
+RETURN
+	Calculate(
+		SUM(Sales[Amount]),
+		Calendar[Year] = _MaxYear
+		Calendar[Date] <= _MaxDate
+		)

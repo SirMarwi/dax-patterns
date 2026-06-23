@@ -1,0 +1,9 @@
+﻿YTD Sales = 
+VAR _Result = 
+    CALCULATE(
+        SUM(Sales[Amount]),
+        DATESYTD(Calendar[Date])
+        )
+        
+RETURN
+	_Result
